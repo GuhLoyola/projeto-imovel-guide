@@ -1,0 +1,163 @@
+.grid-container {
+    display: grid;
+    grid-template-areas: 'corretores contato regra-3'
+        'modal baixar-modal casa';
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px 90px;
+    width: auto;
+    height: calc(100% - 70px);
+    position: relative;
+    top: 70px;
+    padding: 50px 90px;
+    margin-bottom: 70px;
+    overflow: hidden;
+}
+
+.grid-item {
+    border: 1px solid #787878;
+    border-radius: 5px;
+    height: 300px;
+    width: auto;
+}
+
+.corretores {
+    grid-area: corretores;
+}
+
+.contato {
+    grid-area: contato;
+}
+
+.regra-3 {
+    grid-area: regra-3;
+}
+
+.modal {
+    grid-area: modal;
+}
+
+.abrir-modal, .btn-baixar-modal {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-baixar-modal {
+    width: 200px;
+}
+
+.download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.baixar-modal {
+    grid-area: baixar-modal;
+    position: relative;
+    display: flex;
+}
+
+.baixar-modal .retangulo {
+    width: 250px;
+    background-color: #FE6613;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    opacity: 0.94;
+    position: absolute;
+    top: 230px;
+    left: 35px;
+    text-align: center;
+}
+.casa {
+    grid-area: casa;
+    overflow: hidden;
+}
+
+.casa img, .modal img, .baixar-modal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.casa img {
+    animation: zoomOut 10s;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media(min-width: 300px) and (max-width: 424px) {
+    .grid-container {
+        grid-template-areas: 'corretores'
+                             'contato'
+                             'regra-3'
+                             'modal '
+                             'baixar-modal '
+                             'casa';
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        padding: 50px 10px;
+    }
+    .baixar-modal .retangulo {
+        left: 50px;
+    }
+}
+
+
+@media(min-width: 425px) and (max-width: 767px){
+    .grid-container {
+        grid-template-areas: 'corretores'
+                             'contato'
+                             'regra-3'
+                             'modal '
+                             'baixar-modal '
+                             'casa';
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        padding: 50px;
+    }
+
+    .baixar-modal .retangulo {
+        left: 50px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1023px) {
+    .grid-container {
+        grid-template-areas: 'corretores contato'
+                             'regra-3 modal '
+                             'baixar-modal casa';
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        padding: 30px;
+    }
+
+    .baixar-modal .retangulo {
+        left: 45px;
+    }
+
+}
+
+@media(min-width: 1024px) and (max-width: 1199px) {
+    .grid-container {
+        gap: 50px;
+        padding: 50px 20px;
+    }
+    .baixar-modal .retangulo {
+        left: 40px;
+        width: 175px;
+    }
+
+    .btn-baixar-modal {
+        width: 150px;
+    }
+}
