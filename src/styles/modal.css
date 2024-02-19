@@ -20,14 +20,13 @@
 
 .modal-close {
     position: absolute;
-    top: -35px;
+    top: -20px;
     right: 0px;
     background: none;
     cursor: pointer;
     font-size: 30px;
     color: #FE6613;
     z-index: 6;
-    margin-top: 20px;
 }
 
 .modal-content img {
